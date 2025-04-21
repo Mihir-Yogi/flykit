@@ -118,6 +118,12 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Let's Build
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -126,6 +132,12 @@ const HeroSection = () => {
             variant="outline" 
             size="lg" 
             className="border-gray-700 text-white hover:bg-white/5 px-8 py-6 rounded-full transition-all duration-300"
+            onClick={() => {
+              const portfolioSection = document.getElementById('portfolio');
+              if (portfolioSection) {
+                portfolioSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             View Our Work
           </Button>

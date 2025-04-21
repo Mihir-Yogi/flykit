@@ -194,6 +194,7 @@ const PortfolioSection = () => {
             variant="outline" 
             size="lg" 
             className="border-gray-700 text-white hover:bg-white/5 px-8 rounded-full transition-all duration-300"
+            onClick={() => setActiveCategory("all")}
           >
             View All Projects
           </Button>

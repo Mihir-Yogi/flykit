@@ -23,8 +23,17 @@ const AboutSection = () => {
     show: { y: 0, opacity: 1, transition: { duration: 0.6 } },
   };
 
-  // Team members data
+  // Current team member
   const teamMembers = [
+    {
+      name: "Alex Morgan",
+      role: "Founder & Creative Director",
+      image: `https://randomuser.me/api/portraits/men/32.jpg`,
+    },
+  ];
+  
+  /* Team members for future expansion
+  const futureTeamMembers = [
     {
       name: "Alex Morgan",
       role: "Creative Director",
@@ -46,6 +55,7 @@ const AboutSection = () => {
       image: `https://randomuser.me/api/portraits/men/22.jpg`,
     },
   ];
+  */
 
   return (
     <section
