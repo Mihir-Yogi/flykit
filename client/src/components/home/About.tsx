@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { LightbulbIcon, Code2Icon, BarChart3Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Diploma from "../asserts/images/Diploma_Passout_convocation.jpg";
+
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,9 +28,9 @@ const AboutSection = () => {
   // Current team member
   const teamMembers = [
     {
-      name: "Alex Morgan",
+      name: "Mihir Yogi",
       role: "Founder & Creative Director",
-      image: `https://randomuser.me/api/portraits/men/32.jpg`,
+      image: Diploma,
     },
   ];
   
@@ -39,6 +41,7 @@ const AboutSection = () => {
       role: "Creative Director",
       image: `https://randomuser.me/api/portraits/women/32.jpg`,
     },
+    
     {
       name: "James Chen",
       role: "Lead Developer",
@@ -184,28 +187,29 @@ const AboutSection = () => {
             Meet Our Team
           </motion.h3>
           <motion.div 
-            variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-primary-800/30 p-6 rounded-xl border border-gray-800 backdrop-blur-sm"
-              >
-                <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-700">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold text-center">{member.name}</h4>
-                <p className="text-sm text-muted-foreground text-center">{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+  variants={itemVariants}
+  className="flex flex-wrap justify-center gap-6"
+>
+  {teamMembers.map((member, index) => (
+    <motion.div
+      key={index}
+      whileHover={{ y: -10 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="bg-primary-800/30 p-6 rounded-xl border border-gray-800 backdrop-blur-sm w-64"
+    >
+      <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-gray-700">
+        <img
+          src={member.image}
+          alt={member.name}
+           className="w-full h-full object-cover object-center rounded-full"
+        />
+      </div>
+      <h4 className="text-lg font-semibold text-center">{member.name}</h4>
+      <p className="text-sm text-muted-foreground text-center">{member.role}</p>
+    </motion.div>
+  ))}
+</motion.div>
+
         </motion.div>
       </div>
     </section>

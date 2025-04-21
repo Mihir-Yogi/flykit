@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import useScrollSpy from "@/hooks/use-scroll-spy";
+import FlykitLogo from "../asserts/images/flykit_logo_light.png";
 
 const navLinks = [
   { name: "Home", path: "#home" },
@@ -52,9 +53,13 @@ export default function Navbar() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="w-10 h-10 bg-blue-600 rounded flex items-center justify-center"
+                className="w-10 h-10 rounded flex items-center justify-center"
               >
-                <span className="text-white font-bold text-lg">FK</span>
+                 <img
+                    src={FlykitLogo}
+                    alt="Logo"
+                    className="w-12 h-12 object-cover"
+                  />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import FlykitLogo from "../asserts/images/flykit_logo_light.png";
 
 const socialLinks = [
   { icon: FaTwitter, href: "#", label: "Twitter" },
@@ -60,8 +61,12 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-blue-600 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-lg">FK</span>
+              <div className="w-10 h-10 rounded flex items-center justify-center">
+              <img
+                    src={FlykitLogo}
+                    alt="Logo"
+                    className="w-12 h-12 object-cover"
+                  />
               </div>
               <div>
                 <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">

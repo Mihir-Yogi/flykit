@@ -99,14 +99,14 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      details: "+91 7383296446",
+      link: "tel:+917383296446",
     },
     {
       icon: Map,
       title: "Visit Us",
-      details: "123 Tech Avenue, San Francisco, CA",
-      link: "https://maps.google.com",
+      details: "Mehsana, Gujarat, India",
+      link: "https://maps.app.goo.gl/Uf7VbEAmEMM7EW3h6",
     },
   ];
 
@@ -340,7 +340,7 @@ const ContactSection = () => {
           className="mt-16 rounded-xl overflow-hidden border border-gray-800 h-64 md:h-80"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.05465919223!2d-122.44541602171499!3d37.75766926342164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1685412133121!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58502.423237486604!2d72.30503729551239!3d23.589931223094997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c422caf789ef5%3A0x170bbc90b8be8bdc!2sMehsana%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1745265993785!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

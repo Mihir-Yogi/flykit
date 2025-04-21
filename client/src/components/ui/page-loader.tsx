@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import FlykitLogo from "../asserts/images/flykit_logo_light.png";
 
 export function PageLoader() {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,13 @@ export function PageLoader() {
               transition={{ duration: 0.5 }}
               className="mb-8 w-20 h-20 bg-blue-600 rounded-lg flex items-center justify-center relative overflow-hidden"
             >
-              <div className="z-10 font-bold text-4xl text-white">FK</div>
+              <div className="z-10 font-bold text-4xl text-white">
+              <img
+                    src={FlykitLogo}
+                    alt="Logo"
+                    className="w-16 h-16 object-cover"
+                  />
+              </div>
               
               {/* Animated background */}
               <motion.div 
@@ -55,7 +62,7 @@ export function PageLoader() {
               className="text-xl font-bold text-white mb-2"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-                Flykit Agency
+                Flykit
               </span>
             </motion.h1>
             
