@@ -22,22 +22,103 @@ const ServiceCard = ({ title, description, icon: Icon, index, gradient }: Servic
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className="h-full"
+      whileHover={{ 
+        y: -12, 
+        transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+      }}
+      className="h-full perspective-500"
     >
-      <Card className="border border-gray-800 bg-primary-800/20 backdrop-blur-sm h-full transition-all duration-300 hover:border-blue-500/50 group overflow-hidden">
-        <CardContent className="p-6 pt-6">
+      <Card className="border border-gray-800 bg-primary-800/20 backdrop-blur-sm h-full transition-all duration-300 hover:border-blue-500/50 group overflow-hidden relative">
+        <CardContent className="p-6 pt-6 relative z-10">
           <div className="relative z-10">
-            <div className={cn(
-              "w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110",
-              gradient
-            )}>
+            <motion.div 
+              className={cn(
+                "w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300",
+                gradient
+              )}
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.2, rotate: [0, -5, 5, 0] }}
+              transition={{ 
+                scale: { duration: 0.3 }, 
+                rotate: { duration: 0.5, ease: "easeInOut", repeat: 0 } 
+              }}
+            >
               <Icon className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">{title}</h3>
+            </motion.div>
+            <motion.h3 
+              className="text-xl font-semibold mb-3"
+              initial={{ opacity: 1 }}
+              whileHover={{ 
+                color: gradient.includes("blue") ? "#60a5fa" : 
+                       gradient.includes("purple") ? "#c084fc" : 
+                       gradient.includes("pink") ? "#f472b6" : 
+                       gradient.includes("teal") ? "#2dd4bf" : "#ffffff"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {title}
+            </motion.h3>
             <p className="text-muted-foreground">{description}</p>
           </div>
         </CardContent>
+        
+        {/* Animated background gradient */}
+        <motion.div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0"
+          initial={{ 
+            background: `radial-gradient(circle at 50% 50%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                            gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                            gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                            "rgba(45, 212, 191, 0.3)"}, transparent 70%)` 
+          }}
+          animate={{ 
+            background: [
+              `radial-gradient(circle at 30% 30%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                  gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                  gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                  "rgba(45, 212, 191, 0.3)"}, transparent 70%)`,
+              `radial-gradient(circle at 70% 70%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                  gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                  gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                  "rgba(45, 212, 191, 0.3)"}, transparent 70%)`,
+              `radial-gradient(circle at 30% 70%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                  gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                  gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                  "rgba(45, 212, 191, 0.3)"}, transparent 70%)`,
+              `radial-gradient(circle at 70% 30%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                  gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                  gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                  "rgba(45, 212, 191, 0.3)"}, transparent 70%)`,
+              `radial-gradient(circle at 50% 50%, ${gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+                                                  gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+                                                  gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+                                                  "rgba(45, 212, 191, 0.3)"}, transparent 70%)`
+            ]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity, 
+            repeatType: "reverse" 
+          }}
+        />
+
+        {/* Animated border glow */}
+        <motion.div 
+          className="absolute -inset-[1px] z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 0.5, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          style={{
+            background: `linear-gradient(90deg, transparent, ${
+              gradient.includes("blue") ? "rgba(59, 130, 246, 0.3)" : 
+              gradient.includes("purple") ? "rgba(139, 92, 246, 0.3)" : 
+              gradient.includes("pink") ? "rgba(236, 72, 153, 0.3)" : 
+              "rgba(45, 212, 191, 0.3)"
+            }, transparent)`,
+            borderRadius: "inherit",
+            pointerEvents: "none"
+          }}
+        />
       </Card>
     </motion.div>
   );
@@ -212,9 +293,20 @@ const ServicesSection = () => {
                   )}
                 >
                   <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 20 }}
+                    animate={isInView ? 
+                      { opacity: 1, x: 0, y: 0 } : 
+                      { opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 20 }
+                    }
+                    whileHover={{ 
+                      y: -5, 
+                      boxShadow: `0 10px 25px -5px ${index % 2 === 0 ? 'rgba(59, 130, 246, 0.1)' : 'rgba(139, 92, 246, 0.1)'}`
+                    }}
+                    transition={{ 
+                      duration: 0.6, 
+                      delay: index * 0.2,
+                      boxShadow: { duration: 0.2 }
+                    }}
                     className={cn(
                       "bg-primary-800/30 p-6 rounded-xl border border-gray-800 backdrop-blur-sm",
                       "transition-all duration-300 hover:border-blue-500/50 group",
@@ -223,18 +315,55 @@ const ServicesSection = () => {
                     )}
                   >
                     <div className="flex items-start md:items-center">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mr-4 text-blue-400 font-bold">
+                      <motion.div 
+                        className="flex-shrink-0 w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mr-4 text-blue-400 font-bold"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        transition={{ rotate: { duration: 0.8, ease: "easeInOut" }, scale: { duration: 0.3 } }}
+                      >
                         {step.number}
-                      </div>
+                      </motion.div>
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                        <motion.h3 
+                          className="text-xl font-semibold mb-2"
+                          whileHover={{ color: "#60a5fa" }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {step.title}
+                        </motion.h3>
                         <p className="text-muted-foreground">{step.description}</p>
                       </div>
                     </div>
+                    
+                    {/* Moving background gradient */}
+                    <motion.div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl overflow-hidden z-0 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(circle at ${index % 2 === 0 ? '70%' : '30%'} 50%, rgba(59, 130, 246, 0.3), transparent 70%)`
+                      }}
+                      animate={{
+                        background: [
+                          `radial-gradient(circle at ${index % 2 === 0 ? '70%' : '30%'} 30%, rgba(59, 130, 246, 0.3), transparent 70%)`,
+                          `radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.3), transparent 70%)`,
+                          `radial-gradient(circle at ${index % 2 === 0 ? '30%' : '70%'} 70%, rgba(59, 130, 246, 0.3), transparent 70%)`,
+                          `radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.3), transparent 70%)`,
+                          `radial-gradient(circle at ${index % 2 === 0 ? '70%' : '30%'} 30%, rgba(59, 130, 246, 0.3), transparent 70%)`
+                        ]
+                      }}
+                      transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+                    />
                   </motion.div>
 
-                  {/* Timeline dot for desktop */}
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-primary" />
+                  {/* Timeline dot for desktop with animation */}
+                  <motion.div 
+                    className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-blue-600 border-4 border-primary" 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: [0, 1.2, 1] }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 0.3 + index * 0.2, 
+                      times: [0, 0.7, 1] 
+                    }}
+                  />
                 </div>
               ))}
             </div>
