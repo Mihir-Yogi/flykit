@@ -46,8 +46,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <a className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -66,7 +65,6 @@ export default function Navbar() {
                 </h1>
                 <p className="text-xs text-muted-foreground">AGENCY</p>
               </motion.div>
-            </a>
           </Link>
 
           {/* Desktop Navigation */}
