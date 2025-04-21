@@ -11,6 +11,7 @@ const navLinks = [
   { name: "About", path: "#about" },
   { name: "Services", path: "#services" },
   { name: "Portfolio", path: "#portfolio" },
+  { name: "Pricing", path: "#pricing" },
   { name: "Contact", path: "#contact" },
 ];
 
@@ -94,8 +95,15 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105">
-              Let's Build
+            <Button 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+              onClick={() => {
+                document.getElementById("pricing")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
+              View Pricing
             </Button>
           </div>
 
@@ -148,12 +156,12 @@ export default function Navbar() {
                   className="mt-4 w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    document.getElementById("contact")?.scrollIntoView({
+                    document.getElementById("pricing")?.scrollIntoView({
                       behavior: "smooth",
                     });
                   }}
                 >
-                  Let's Build
+                  View Pricing
                 </Button>
               </nav>
             </div>

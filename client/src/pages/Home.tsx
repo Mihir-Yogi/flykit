@@ -5,6 +5,7 @@ import HeroSection from "@/components/home/Hero";
 import AboutSection from "@/components/home/About";
 import ServicesSection from "@/components/home/Services";
 import PortfolioSection from "@/components/home/Portfolio";
+import PricingSection from "@/components/home/Pricing";
 import ContactSection from "@/components/home/Contact";
 import FooterSection from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <PortfolioSection />
+      <PricingSection />
       <ContactSection />
       <FooterSection />
       
