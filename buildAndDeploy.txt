@@ -1,0 +1,34 @@
+# Flykit Agency Deployment Instructions
+
+## Building the project for deployment
+1. Run the build script to generate production files:
+   ```
+   npm run build
+   ```
+
+2. This will create a `dist` directory with optimized files.
+
+## Deploying the website with the standalone deployment script
+1. After building, you can use our simple deployment script:
+   ```
+   node deploy.js
+   ```
+
+2. This will start a server on port 3000 (by default) or use the PORT environment variable.
+
+## Deploying to a hosting service
+For deployment to professional hosting services:
+
+1. Upload the following files to your host:
+   - dist/ (the entire directory)
+   - index.html (from root)
+   - deploy.js (optional - for Node.js hosting)
+
+2. For static hosting (Netlify, Vercel, GitHub Pages):
+   - Point your hosting service to the root directory
+   - Set the build command to `npm run build`
+   - Set the publish directory to `dist/`
+
+3. For Windows users:
+   - Use the updated package.json with cross-env
+   - Or manually set NODE_ENV=production before running
