@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { TypewriterEffect, SplitText } from "@/components/ui/text-animation";
+import { PrimaryAnimatedButton, OutlineAnimatedButton } from "@/components/ui/animated-button";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -92,9 +94,20 @@ const HeroSection = () => {
           variants={textVariants}
           className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200"
         >
-          Your Startup Toolkit,<br />
+          <SplitText 
+            animation="slideUp" 
+            staggerChildren={0.03}
+          >
+            Your Startup Toolkit,
+          </SplitText>
+          <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-            Delivered with Tech Precision
+            <TypewriterEffect 
+              words={["Delivered with Tech Precision", "Built for Success", "Designed to Impress"]} 
+              typingSpeed={100} 
+              deletingSpeed={80} 
+              delayBetweenWords={2000}
+            />
           </span>
         </motion.h1>
 
@@ -105,7 +118,13 @@ const HeroSection = () => {
           variants={textVariants}
           className="max-w-2xl mx-auto text-muted-foreground text-lg md:text-xl mb-8"
         >
-          Design, Develop, and Grow — Fly with Flykit
+          <SplitText 
+            animation="fadeIn" 
+            staggerChildren={0.01}
+            delayStart={0.5}
+          >
+            Design, Develop, and Grow — Fly with Flykit
+          </SplitText>
         </motion.p>
         
         <motion.div
@@ -115,9 +134,10 @@ const HeroSection = () => {
           variants={textVariants}
           className="flex flex-wrap justify-center gap-4"
         >
-          <Button 
+          <PrimaryAnimatedButton 
             size="lg" 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+            className="px-8 py-6"
+            effectType="glow"
             onClick={() => {
               const contactSection = document.getElementById('contact');
               if (contactSection) {
@@ -127,11 +147,11 @@ const HeroSection = () => {
           >
             Let's Build
             <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button 
-            variant="outline" 
+          </PrimaryAnimatedButton>
+          <OutlineAnimatedButton 
             size="lg" 
-            className="border-gray-700 text-white hover:bg-white/5 px-8 py-6 rounded-full transition-all duration-300"
+            className="px-8 py-6"
+            effectType="spotlight"
             onClick={() => {
               const portfolioSection = document.getElementById('portfolio');
               if (portfolioSection) {
@@ -140,7 +160,7 @@ const HeroSection = () => {
             }}
           >
             View Our Work
-          </Button>
+          </OutlineAnimatedButton>
         </motion.div>
         
         <motion.div
@@ -150,12 +170,59 @@ const HeroSection = () => {
           variants={textVariants}
           className="mt-20"
         >
-          <div className="animate-bounce">
-            <div className="w-0 h-8 mx-auto border-l-2 border-dashed border-gray-400"></div>
-            <a href="#about" className="inline-block rotate-90 text-gray-400 text-sm">
-              Scroll
-            </a>
-          </div>
+          <motion.a 
+            href="#about"
+            className="relative inline-flex items-center flex-col text-gray-400 text-sm group"
+            whileHover={{ scale: 1.05, color: "#60a5fa" }}
+            transition={{ duration: 0.3 }}
+          >
+            <span className="mb-2">Scroll Down</span>
+            
+            {/* Circle + Arrow Animation */}
+            <div className="relative w-10 h-10">
+              {/* Pulsing circle */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-blue-500/10"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+              />
+              
+              {/* Arrow animation */}
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+              >
+                <svg 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 20 20" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-blue-400 group-hover:text-blue-500 transition-colors duration-300"
+                >
+                  <path 
+                    d="M10 15L15 10M10 15L5 10M10 15V5" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </motion.div>
+            </div>
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
