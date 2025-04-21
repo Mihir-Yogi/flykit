@@ -1,0 +1,128 @@
+Generate a website design for "Flykit Agency", a creative-tech agency that provides branding, web design, and digital solutions for startups. The website should have a futuristic, tech-inspired look with smooth animations, interactive elements, and an overall sleek vibe.
+
+1. Homepage:
+Header:
+
+Full-width hero section with a background video or a modern graphic.
+
+Add a large, bold heading like "Your Startup Toolkit, Delivered with Tech Precision".
+
+Subheading: "Design, Develop, and Grow — Fly with Flykit".
+
+Call-to-action (CTA) button: "Let's Build" (or "Get Started").
+
+Use subtle animations, such as the text fading in as the user scrolls.
+
+Navigation Bar:
+
+Sticky navigation bar that appears as users scroll.
+
+Clean, minimalistic design with menu items: "Home", "About", "Services", "Portfolio", "Contact".
+
+Hover effects with smooth transitions (e.g., color change, underline effect).
+
+Animations:
+
+Smooth scroll animations for each section.
+
+Parallax effects for background images (e.g., different layers of images moving at different speeds).
+
+Micro-animations when scrolling, like text appearing or icons spinning.
+
+2. About Section:
+Use large, high-quality images or illustrations of the agency’s team or office environment.
+
+Include a short description of Flykit, focusing on the creative and tech-driven nature of the agency.
+
+Section layout should have alternating images and text with a sliding animation effect as you scroll down.
+
+3. Services Section:
+A sleek timeline or step-by-step scroll where each service appears as the user scrolls.
+
+Each service block should have:
+
+An icon (modern, techy icons).
+
+Title (bold).
+
+Description of the service (short and impactful).
+
+Include hover effects or animations where the icons or background change when hovered over.
+
+Services to include: Branding & Identity, Portfolio & Website Design, Social Media Toolkit, and Tech Stack Setup.
+
+Service Highlights:
+
+Use scroll-triggered animations (e.g., fade in, slide up, or scale up).
+
+4. Portfolio Section:
+Display a grid of past projects (website designs, branding, etc.), with hover effects that display more details.
+
+Use a masonry layout (irregular grid) to add a dynamic feel to the portfolio.
+
+Include smooth hover animations to reveal project details (e.g., project name, brief description).
+
+Showcase a few featured projects with images that fade or slide in as you scroll.
+
+Add a filter feature, allowing users to sort by service type (e.g., branding, web design).
+
+5. Contact Section:
+Use a sleek, minimalist contact form with smooth animations when fields are selected or filled in.
+
+A modern map with a pin showing the office location (if applicable).
+
+Display contact information (email, phone, address) in a clean layout.
+
+Include social media icons with smooth hover animations (e.g., icons expanding, color changes, etc.).
+
+Include a "Call-to-Action" button like "Get in Touch" or "Start a Project".
+
+6. Footer:
+Include a minimalistic footer with the following:
+
+Flykit logo (animated or with a hover effect).
+
+Links to social media.
+
+Privacy policy and terms of service (links).
+
+Simple copyright text with a stylish design.
+
+Add smooth hover effects for links.
+
+7. Animations & Interactivity:
+Scroll-based animations: As users scroll down, elements should fade in, slide in from the sides, or scale up.
+
+Hover effects: Buttons, icons, and images should have subtle hover animations (color shifts, shadows, or slight movements).
+
+Button animations: Add smooth transitions and animations to buttons when hovered, clicked, or focused.
+
+Parallax effects: Add a sense of depth to the page with background images moving at different speeds than the rest of the page content.
+
+Section transitions: Use transitions between sections to smoothly guide the user through the content (e.g., sliding sections, fades).
+
+8. Typography & Color Palette:
+Use modern, sans-serif fonts with a techy, sleek style (e.g., Roboto, Poppins, or a custom font).
+
+Focus on a dark or deep blue background with accents of electric blue, neon green, or bright purple for call-to-action buttons and icons.
+
+Add vibrant accent colors that stand out but still maintain a professional look.
+
+9. Performance & UX:
+Optimize for mobile devices with responsive design (make sure it’s fully mobile-friendly).
+
+Fast page load times with compressed images and optimized code.
+
+Ensure accessibility (contrast, font sizes, etc.).
+
+Smooth navigation with intuitive scroll behavior.
+
+10. Other Features:
+Dark Mode/Light Mode: A toggle button allowing users to switch between dark mode and light mode for comfort.
+
+AI Chatbot: Implement an AI chatbot on the homepage for immediate communication.
+
+Blog Section (Optional): Create a small section for blogs or updates related to design, technology, or startup culture.
+
+SEO Optimization: Ensure the website is SEO-friendly with proper meta tags, title tags, and descriptions for each page.
+
