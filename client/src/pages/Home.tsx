@@ -11,6 +11,9 @@ import FooterSection from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PageLoader } from "@/components/ui/page-loader";
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export default function Home() {
   // Scroll to top button logic
